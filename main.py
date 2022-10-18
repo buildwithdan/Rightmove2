@@ -54,6 +54,7 @@ def main():
     # initialise index, this tracks the page number we are on. every additional page adds 24 to the index
 
     # create lists to store our data
+    all_id = []
     all_apartment_links = []
     all_description = []
     all_address = []
@@ -104,6 +105,12 @@ def main():
                 # tracks which apartment we are on in the page
                 apartment_no = apartments[i]
 
+                
+              
+              
+              
+              
+              
                 # append link
                 apartment_info = apartment_no.find("a", class_="propertyCard-link")
                 link = "https://www.rightmove.co.uk" + apartment_info.attrs["href"]
@@ -130,7 +137,7 @@ def main():
                     apartment_no.find("div", class_="propertyCard-priceValue")
                     .get_text()
                     .strip()
-                )
+               )
                 all_price.append(price)
 
             print(f"You have scrapped {pages + 1} pages of apartment listings.")
